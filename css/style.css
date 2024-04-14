@@ -1,0 +1,126 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  background-color: black;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  font-family: "Raleway", sans-serif;
+  scroll-behavior: smooth;
+}
+
+.container {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: repeat(4, 200px);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 1rem;
+  padding: 2rem;
+  grid-auto-flow: dense;
+}
+
+.item {
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.7s;
+}
+
+img:hover {
+  transform: scale(1.2);
+}
+
+.item-1 {
+  position: relative;
+  background-color: rgb(1, 1, 204);
+  color: white;
+  grid-column: span 3;
+  grid-row: span 2;
+}
+
+.item-1 > svg {
+  position: absolute;
+  top: 35px;
+  right: 40px;
+  width: 10%;
+  height: auto;
+}
+.board {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 2rem;
+}
+
+h1 {
+  font-size: 8rem;
+  font-weight: 700;
+}
+.item-2 {
+  grid-column: span 2;
+  grid-row: span 1;
+  align-items: start;
+}
+.item-3 {
+  grid-column: span 2;
+  grid-row: span 1;
+  align-items: center;
+}
+
+.item-3 img {
+  object-position: 0 100px;
+}
+
+.item-4 {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+.item-5 {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.item-7 {
+  grid-column: span 3;
+  grid-row: span 1;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    grid-template-rows: repeat(6, 150px);
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  h1 {
+    font-size: 5rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .container {
+    grid-template-rows: repeat(15, 150px);
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  .item {
+    grid-column: span 3;
+    grid-row: span 1;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+}
